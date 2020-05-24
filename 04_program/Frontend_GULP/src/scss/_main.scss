@@ -1,0 +1,107 @@
+/************ MAIN STYLES *************/
+#wrapper {
+  width: 100%;
+  //min-height: 100vh;
+}
+.container {
+  width: calc(100% - 16px);
+  //height: 100vh;
+	margin: 0 auto;
+  //outline: 1px dashed red;
+	@media screen and (min-width: 769px) and (max-width: 1200px){
+    width: 740px;
+  }
+  @media screen and (min-width: 1201px) and (max-width: 1600px){
+    width: 960px;
+  }
+  @media screen and (min-width: 1601px) and (max-width: 1919px){
+    width: 1420px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 1800px;
+  }
+}
+#working-field {
+  margin: 2em auto;
+  height: calc(100vh - 4em);
+  background: $color-bg;
+  box-shadow: 0 1em 2em rgba(0,0,0,.6);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+.fluid-row {
+  display: block;
+  @media screen and (min-width: 589px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 0 auto;
+	}
+}
+.fluid-item {
+  display: block;
+	text-align: center;
+  width: 240px;
+  margin: 0 auto;
+  padding-bottom: $basic * 2;
+  overflow-wrap: break-word;
+  @media screen and (min-width: 481px) {
+    width: 320px;
+  }
+  @media screen and (min-width: 589px) {
+    width: fit-content;
+    flex-basis: 180px;
+    margin: 0 $basic/2;
+    flex-grow: 1;
+  }
+  @media screen and (min-width: 769px) {
+    margin: 0;
+    padding: $basic * 2 $basic / 2;
+  }
+}
+
+#topper {
+  // outline: 1px dashed red;
+  flex-basis: 6em;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+#heading {
+  background: $color-dark;
+  flex-basis: 3em;
+  flex-grow: 0;
+}
+#breadcrumbs {
+  background: $color-bgdark;
+  flex-basis: 3em;
+  flex-grow: 0;
+}
+#main {
+  // outline: 1px dashed red;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+#mainmenu {
+  background: $color-bgdark;
+  flex-basis: 14em;
+  flex-grow: 0;
+}
+#content {
+  flex-grow: 1;
+}
+#footer {
+  // outline: 1px dashed red;
+  background: $color-dark;
+  flex-basis: 2em;
+  flex-grow: 0;
+}

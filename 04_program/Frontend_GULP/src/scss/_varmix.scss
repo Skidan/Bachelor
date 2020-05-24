@@ -1,0 +1,23 @@
+/********** VARIABLES AND MIXINS ***********/
+// sizes
+$basic: 4mm;
+
+// colors
+$color-main: #629c44;
+$color-light: #ebebeb;
+$color-dark: #7a7a7a;
+$color-contrast: #92ff6e;
+$color-bg: #aaa;
+$color-bgdark: #606060;
+$gradient-bg: linear-gradient(to bottom, #393939, #646464);
+$bgimg: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAKCAMAAABL52QCAAAABlBMVEXCw8Tp6uwFw7MwAAAAF0lEQVR4AWNgYAQCCMEAIoAQgkA8/LIABOwAKWIaZEkAAAAASUVORK5CYII=);///////////////////////////////////
+
+// typography
+$font-heading: 'Cormorant Infant', serif;
+$font-regular: 'Roboto', sans-serif;
+$font-monospace: 'Ubuntu Mono', monospace;
+$font-size: $basic;
+$line-h: $font-size * 1.5;
+
+//other
+$test: 1px dotted $color-contrast;
