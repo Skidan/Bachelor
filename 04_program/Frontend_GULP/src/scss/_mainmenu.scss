@@ -1,0 +1,9 @@
+#main-menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.main-listitem {
+  display: block;
+  flex-grow: 0;
+}
