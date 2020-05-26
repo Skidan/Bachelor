@@ -62,7 +62,7 @@
 }
 
 #topper {
-  flex-basis: $basic * 6;
+  flex-basis: $basic * 7;
   flex-grow: 0;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
 }
 #heading {
   background: $color-dark;
-  flex-basis: $basic * 3;
+  flex-basis: $basic * 4;
   flex-grow: 0;
   display: flex;
   flex-direction: row;
@@ -99,6 +99,7 @@
   flex-basis: $basic * 14;
   flex-grow: 0;
 }
+@import "_mainmenu";
 #content {
   flex-grow: 1;
 }
