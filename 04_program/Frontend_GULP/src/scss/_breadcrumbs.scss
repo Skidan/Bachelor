@@ -1,0 +1,43 @@
+.metabox {
+	display: none;
+	@media screen and (min-width: 589px) {
+		display: inline-block;
+    vertical-align: top;
+    margin: $basic/2;
+		border-radius: $basic / 2;
+		overflow: hidden;
+	}
+	& a {
+    // color: darken($color-main, 10%);
+    padding: $basic/2 $basic;
+    font-size: $basic;
+    line-height: $basic * 2;
+    color: $color-bg;
+    background-color: $color-dark;
+    padding-left: $basic * 2;
+    position: relative;
+    &::before {
+      content: " ";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+      border-width: $basic;
+      filter: drop-shadow(3px 0 2px rgba(0,0,0,.2));
+      border-left-color: $color-dark;
+      left: 0;
+    }
+    &:first-of-type {
+      color: $color-light;
+      padding-left: $basic;
+      &::before {
+        content: none;
+      }
+    }
+    &:last-of-type {
+      color: $color-light !important;
+      background-color: $color-main;
+    }
+  }
+}
