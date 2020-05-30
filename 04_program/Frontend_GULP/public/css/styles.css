@@ -457,14 +457,12 @@ section {
     padding: 14px 7px 14px 21px; }
 
 #content {
-  outline: 1px dotted red;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
           flex-grow: 1; }
 
 .flex-scroll-container {
-  outline: 1px dotted black;
   height: -webkit-calc(100vh - 182px);
   height: calc(100vh - 182px);
   display: block;
@@ -548,4 +546,7 @@ section {
   -webkit-box-flex: 0;
   -webkit-flex-grow: 0;
       -ms-flex-positive: 0;
-          flex-grow: 0; }
+          flex-grow: 0;
+  color: #ebebeb;
+  line-height: 28px;
+  padding-left: 14px; }

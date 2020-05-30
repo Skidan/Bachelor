@@ -121,11 +121,11 @@
 }
 @import "_mainmenu";
 #content {
-  outline: 1px dotted red;
+  // outline: 1px dotted red;
   flex-grow: 1;
 }
 .flex-scroll-container {
-  outline: 1px dotted black;
+  // outline: 1px dotted black;
   height: calc(100vh - 182px);
   display: block;
   overflow-y: auto;
@@ -174,4 +174,7 @@
   background: $color-dark;
   flex-basis: $basic * 2;
   flex-grow: 0;
+  color: $color-light;
+  line-height: $basic * 2;
+  padding-left: $basic;
 }
