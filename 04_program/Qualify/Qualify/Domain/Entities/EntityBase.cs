@@ -15,15 +15,15 @@ namespace Qualify.Domain.Entities
         public virtual string Title { get; set; }
 
         [Display(Name = "Name (heading)")]
-        public virtual string Title { get; set; }
+        public virtual string Phone { get; set; }
 
         [Display(Name = "Name (heading)")]
-        public virtual string Title { get; set; }
+        public virtual string Address { get; set; }
 
         [Display(Name = "Name (heading)")]
-        public virtual string Title { get; set; }
+        public virtual string Keyword { get; set; }
 
         [Display(Name = "Name (heading)")]
-        public virtual string Title { get; set; }
+        public virtual string Metatag { get; set; }
     }
 }
