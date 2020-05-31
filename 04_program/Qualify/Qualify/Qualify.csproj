@@ -12,12 +12,11 @@
   <ItemGroup>
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Views\" />
+    <Folder Include="Domain\Entities\" />
     <Folder Include="Models\ViewComponents\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\pug\" />
-    <Folder Include="Domain\" />
-    <Folder Include="Service\" />
   </ItemGroup>
 
   <ItemGroup>

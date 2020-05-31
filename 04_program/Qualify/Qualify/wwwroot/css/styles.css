@@ -223,6 +223,7 @@ section {
   @media screen and (min-width: 589px) {
     .metabox {
       display: inline-block;
+      font-size: 0;
       vertical-align: top;
       margin: 7px;
       border-radius: 7px;
