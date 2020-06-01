@@ -137,8 +137,6 @@ D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\Microsoft.As
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.csproj.CoreCompileInputs.cache
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.MvcApplicationPartsAssemblyInfo.cache
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.Views.pdb
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AsidePartial.cshtml.g.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Shared\FooterPartial.cshtml.g.cs
@@ -151,3 +149,5 @@ D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Index.cshtml.g.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\appsettings.production.json
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\appsettings.staging.json
+D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.csproj.CoreCompileInputs.cache
+D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.MvcApplicationPartsAssemblyInfo.cache

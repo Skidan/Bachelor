@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "SI1gDtpwGBq2Vavb24CDCgDWot7QRC+QShTeAVvxe67snzSkZJwFMJvg+y+IsLda+LN1VXM7qiImpbh0+DNnFA==",
+  "dgSpecHash": "SjopkwPbabksmIlvwl5pXvqlpWq0NJXI6skAKQ/xuIWbrqSo+KKMKX5TMrxyRQrI1lkVJfaHrgf0wxnPUdQ1Jw==",
   "success": true,
   "projectFilePath": "D:\\NURE\\Bachelor\\04_program\\Qualify\\Qualify\\Qualify.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,7 @@
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.4\\microsoft.entityframeworkcore.design.3.1.4.nupkg.sha512",
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.4\\microsoft.entityframeworkcore.relational.3.1.4.nupkg.sha512",
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.4\\microsoft.entityframeworkcore.sqlserver.3.1.4.nupkg.sha512",
+    "C:\\Users\\Owl\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.4\\microsoft.entityframeworkcore.tools.3.1.4.nupkg.sha512",
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.4\\microsoft.extensions.caching.abstractions.3.1.4.nupkg.sha512",
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.4\\microsoft.extensions.caching.memory.3.1.4.nupkg.sha512",
     "C:\\Users\\Owl\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.4\\microsoft.extensions.configuration.3.1.4.nupkg.sha512",
