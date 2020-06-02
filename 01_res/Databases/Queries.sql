@@ -1,0 +1,8 @@
+USE [qualify]
+
+SELECT A.NAME, A.DEPT_CODE, B.NAME, B.SURNAME, C.CODE, D.CODE
+FROM DEPARTMENT A 
+inner join EMPLOYEE B on A.DEPT_HEAD = B.ID
+left join ACCOUNT C on A.ID = C.ID
+left join WAREHOUSE D on A.ID = D.ID
+GO
