@@ -17,10 +17,10 @@ namespace Qualify
     {
         public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration) => Configuration = configuration;
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection service)
         {
             Configuration.Bind("Project", new Config());
-            services.AddControllersWithViews()
+            service.AddControllersWithViews()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
         }
 
