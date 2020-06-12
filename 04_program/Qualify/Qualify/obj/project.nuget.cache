@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "64f84pbLz51r9W6Dk8TiCEbqU5/oNVAbW96IzqKUS0R7cga5slGESK7A59ieqteofN9C7K013nhcrKrpEiGPMw==",
+  "dgSpecHash": "JLqcEIDN/RqZu/ru5J20BP8k9OdMxCpbEynXnjUUv9BCcRsIfJxXIB6dth0DK3EsbTAUU2PZvh2IE3Yz6MclsA==",
   "success": true,
   "projectFilePath": "D:\\NURE\\Bachelor\\04_program\\Qualify\\Qualify\\Qualify.csproj",
   "expectedPackageFiles": [
@@ -166,8 +166,7 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\Owl\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
