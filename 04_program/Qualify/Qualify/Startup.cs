@@ -38,6 +38,7 @@ namespace Qualify
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                //endpoints.MapControllerRoute("Claim", "{controller=Claim}/{action=ViewAllClaims}/{id?}");
             });
         }
     }

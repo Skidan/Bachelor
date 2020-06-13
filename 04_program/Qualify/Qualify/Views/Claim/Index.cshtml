@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Qualify.Models.ClaimModel>
+@{
+    Layout = "_Layout";
+}
+
+<div class="minor-navigation">
+    <p>Here will be minor navigation bar</p>
+</div>
+
+<div class="flex-scroll-container">
+    @foreach (var claim in Model)
+    {
+        <div class="content-item">
+            <h3>@claim.Title</h3>
+            <p><strong>@claim.Client</strong>, <em>@claim.DateStart.ToString("yyyy-MM-dd")</em></p><br />
+            <p>@claim.Description</p>
+        </div>
+    }
+</div>

@@ -2,7 +2,7 @@
 #wrapper {
   width: 100%;
 }
-.container {
+.my-container {
   width: calc(100% - 16px);
 	margin: 0 auto;
 	@media screen and (min-width: 769px) and (max-width: 1200px){
@@ -126,7 +126,7 @@
 }
 .flex-scroll-container {
   // outline: 1px dotted black;
-  height: calc(100vh - 182px);
+  height: calc(100vh - 224px);
   display: block;
   overflow-y: auto;
   @media screen and (min-width: 589px) {
@@ -135,6 +135,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 	}
+}
+.minor-navigation {
+    display: block;
+    height: $basic * 3;
 }
 .content-item {
   // outline: $test;

@@ -81,20 +81,20 @@ section {
 #wrapper {
   width: 100%; }
 
-.container {
+.my-container {
   width: calc(100% - 16px);
   margin: 0 auto; }
   @media screen and (min-width: 769px) and (max-width: 1200px) {
-    .container {
+    .my-container {
       width: 740px; } }
   @media screen and (min-width: 1201px) and (max-width: 1600px) {
-    .container {
+    .my-container {
       width: 960px; } }
   @media screen and (min-width: 1601px) and (max-width: 1919px) {
-    .container {
+    .my-container {
       width: 1420px; } }
   @media screen and (min-width: 1920px) {
-    .container {
+    .my-container {
       width: 1800px; } }
 
 .fluid {
@@ -293,7 +293,7 @@ section {
   flex-grow: 1; }
 
 .flex-scroll-container {
-  height: calc(100vh - 182px);
+  height: calc(100vh - 224px);
   display: block;
   overflow-y: auto; }
   @media screen and (min-width: 589px) {
@@ -302,6 +302,10 @@ section {
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-evenly; } }
+
+.minor-navigation {
+  display: block;
+  height: 42px; }
 
 .content-item {
   background-color: #7a7a7a;

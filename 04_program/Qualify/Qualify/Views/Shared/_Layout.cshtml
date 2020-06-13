@@ -6,14 +6,12 @@
 </head>
 <body>
     <div id="wrapper">
-        <div class="container" id="working-field">
+        <div class="my-container" id="working-field">
             @await Html.PartialAsync("HeaderPartial")
             <main id="main">
                 @await Html.PartialAsync("AsidePartial")
                 <section id="content">
-                    <div class="flex-scroll-container">
                         @RenderBody()
-                    </div>
                 </section>
             </main>
             @await Html.PartialAsync("FooterPartial")
