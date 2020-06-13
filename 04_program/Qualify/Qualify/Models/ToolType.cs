@@ -5,14 +5,12 @@ using System.Threading.Tasks;
 
 namespace Qualify.Models
 {
-    public class DepartmentModel
+    public class ToolType
     {
         public int ID { get; set; }
         public string Name { get; set; }
-        public string? Account { get; set; }
-        public string? Warehouse { get; set; }
+        public int CheckIntervalWeeks { get; set; }
 
-        public ICollection<Employee> Employees { get; set; }
-        
+        public ICollection<Tool> Tools { get; set; }
     }
 }

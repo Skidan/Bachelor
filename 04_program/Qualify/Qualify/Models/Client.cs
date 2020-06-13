@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Qualify.Models
 {
-    public class ClientModel
+    public class Client
     {
         public int ID { get; set; }
         public string Name { get; set; }

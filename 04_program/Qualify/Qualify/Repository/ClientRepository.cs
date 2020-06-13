@@ -9,31 +9,31 @@ namespace Qualify.Repository
 {
     public class ClientRepository
     {
-        public List<ClientModel> GetClients() 
+        public List<Client> GetClients() 
         {
             return DataSource();
         }
-        public ClientModel GetClientById(int id) 
+        public Client GetClientById(int id) 
         { 
             return DataSource().Where(x => x.ID == id).FirstOrDefault();
         }
-        public List<ClientModel> FilterClients(string country, string name)
+        public List<Client> FilterClients(string country, string name)
         {
             return DataSource().Where(x => x.Country.Contains(country) || x.Name.Contains(name)).ToList();
         }
 
         ////////////
-        private List<ClientModel> DataSource()
+        private List<Client> DataSource()
         {
-            return new List<ClientModel>()
+            return new List<Client>()
             {
-                new ClientModel() {ID = 1, Name = "MiTip", Country = "Denmark", Email = "info@mi.dk"},
-                new ClientModel() {ID = 2, Name = "Konekesko", Country = "Lithuania", Email = "info@konekesko.lt"},
-                new ClientModel() {ID = 3, Name = "Roltex", Country = "Poland", Email = "wszystko@roltexagro.pl"},
-                new ClientModel() {ID = 4, Name = "Agricasa", Country = "Hungary", Email = "info@agricasa.hg"},
-                new ClientModel() {ID = 5, Name = "Almex, D.o.o.", Country = "Serbia", Email = "info@almex.rs"},
-                new ClientModel() {ID = 6, Name = "Agrimasz", Country = "Poland", Email = "info@agrimasz.pl"},
-                new ClientModel() {ID = 7, Name = "OOO Umega", Country = "Russia", Email = "info@umegaagro.ru"}
+                new Client() {ID = 1, Name = "MiTip", Country = "Denmark", Email = "info@mi.dk"},
+                new Client() {ID = 2, Name = "Konekesko", Country = "Lithuania", Email = "info@konekesko.lt"},
+                new Client() {ID = 3, Name = "Roltex", Country = "Poland", Email = "wszystko@roltexagro.pl"},
+                new Client() {ID = 4, Name = "Agricasa", Country = "Hungary", Email = "info@agricasa.hg"},
+                new Client() {ID = 5, Name = "Almex, D.o.o.", Country = "Serbia", Email = "info@almex.rs"},
+                new Client() {ID = 6, Name = "Agrimasz", Country = "Poland", Email = "info@agrimasz.pl"},
+                new Client() {ID = 7, Name = "OOO Umega", Country = "Russia", Email = "info@umegaagro.ru"}
             };
         }
     }

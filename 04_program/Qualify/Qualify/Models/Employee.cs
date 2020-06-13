@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Qualify.Models
 {
-    public class EmployeeModel
+    public class Employee
     {
         public int ID { get; set; }
         public string Name { get; set; }
@@ -13,6 +13,7 @@ namespace Qualify.Models
         public string? Position { get; set; }
 
         public ICollection<Action> Actions { get; set; }
+        public ICollection<Tool> Tools { get; set; }
         public Department Department { get; set; }
     }
 }

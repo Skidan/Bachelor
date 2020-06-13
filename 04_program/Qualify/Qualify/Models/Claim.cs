@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Qualify.Models
 {
-    public class ClaimModel
+    public class Claim
     {
         public int ID { get; set; }
         public int ClientID { get; set; }
@@ -17,5 +17,7 @@ namespace Qualify.Models
 
         public Client Client { get; set; }
         public ICollection<ClaimHistory> ClaimHistories { get; set; }
+        public ICollection<ClaimExpence> ClaimExpences { get; set; }
+
     }
 }

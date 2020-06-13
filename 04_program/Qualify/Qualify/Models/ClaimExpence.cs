@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Qualify.Models
 {
-    public class ClaimExpenceModel
+    public class ClaimExpence
     {
         public int ID { get; set; }
         public double Costs { get; set; }
