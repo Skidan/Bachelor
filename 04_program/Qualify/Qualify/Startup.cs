@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Qualify.Repository;
 using Qualify.Service;
 
 namespace Qualify
@@ -21,9 +22,12 @@ namespace Qualify
         public void ConfigureServices(IServiceCollection service)
         {            
             Configuration.Bind("Project", new Config());
-            service.AddControllersWithViews()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
+            service.AddControllersWithViews().SetCompatibilityVersion(CompatibilityVersion.Version_3_0).AddSessionStateTempDataProvider();
             service.AddDbContext<QualifyContext>(options => options.UseSqlServer(Config.ConnectionString));
+#if DEBUG
+            service.AddRazorPages().AddRazorRuntimeCompilation();
+#endif
+            service.AddScoped<ClaimRepository, ClaimRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

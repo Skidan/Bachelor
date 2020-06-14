@@ -2,22 +2,4 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-@if (ViewBag.Title != null)
-{
-    <title>@ViewBag.Title</title>
-}
-else
-{
-    <title>@Config.CompanyName</title>
-}
-
-@if (ViewBag.Description != null)
-{
-    <title>@ViewBag.Description</title>
-}
-
-@if (ViewBag.Keywords != null)
-{
-    <title>@ViewBag.Keywords</title>
-}
+<title>@ViewData["Title"] | @Config.CompanyName</title>

@@ -1,0 +1,32 @@
+﻿@using Qualify.Models
+@model Claim
+@{
+    ViewData["Title"] = "View claim";
+}
+<h1 class="form-heading">Claim @ViewBag.ClaimId details</h1>
+<div class="content-container">
+    <dl>
+        <dt>Claim title:</dt>
+        <dd>@Model.Title</dd>
+
+        <dt>Client:</dt>
+        <dd>@Model.ClientID</dd>
+
+        <dt>Description:</dt>
+        <dd>@Model.Description</dd>
+
+        <dt>Зарегистрирован:</dt>
+        <dd>@Model.DateStart.ToString("yyyy-MM-dd")</dd>
+        @if (Model.DateEnd != null)
+        {
+            <dt>Закрыт:</dt>
+            <dd>@Model.DateEnd</dd>
+        }
+        else
+        {
+            <dt>Закрыт:</dt>
+            <dd>А нифига не закрыт ещё</dd>
+        }
+
+    </dl>
+</div>

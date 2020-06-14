@@ -1,4 +1,6 @@
-﻿using Qualify.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Qualify.Models;
 using Qualify.Service;
 using System;
 using System.Collections.Generic;
@@ -15,29 +17,86 @@ namespace Qualify.Repository
         {
             _context = context;
         }
-        public int AddClaim(Claim claim)
+
+        public async Task<int> AddClaim(Claim claim)
         {
-            return 1;
+            var newClaim = new Claim()
+            {
+                ClientID = claim.ClientID,
+                Title = claim.Title,
+                Description = claim.Description,
+                DateStart = claim.DateStart
+                //Dirpath = claim.ID.ToString()
+            };
+            await _context.Claims.AddAsync(newClaim);
+            await _context.SaveChangesAsync();
+            return newClaim.ID;
         }
-        public List<Claim> GetAllClaims() 
+
+        public async Task<List<Claim>> GetAllClaims() 
         {
-            return DataSource();
+            var claims = new List<Claim>();
+            var allClaims = await _context.Claims.ToListAsync();
+            if (allClaims?.Any() == true)
+            {
+                foreach (var claim in allClaims) 
+                {
+                    claims.Add(new Claim()
+                    {
+                        ID = claim.ID,
+                        ClientID = claim.ClientID,
+                        Title = claim.Title,
+                        Description = claim.Description,
+                        Dirpath = claim.Dirpath,
+                        DateStart = claim.DateStart,
+                        DateEnd = claim.DateEnd
+                    });
+                }
+            }
+            return claims;
         }
-        public Claim GetClaimById(int id) 
+
+        public async Task<Claim> GetClaimById(int id) 
         {
-            return DataSource().Where(x => x.ID == id).FirstOrDefault();
+            var currentClaim = await _context.Claims.FindAsync(id);
+            if (currentClaim != null)
+            {
+                var claimDetails = new Claim()
+                {
+                    ID = currentClaim.ID,
+                    ClientID = currentClaim.ClientID,
+                    Title = currentClaim.Title,
+                    Description = currentClaim.Description,
+                    Dirpath = currentClaim.Dirpath,
+                    DateStart = currentClaim.DateStart,
+                    DateEnd = currentClaim.DateEnd
+                };
+                return claimDetails;
+            }
+            return new Claim() 
+            {
+                ID = 166,
+                ClientID = 01,
+                Title = "01",
+                Description = "01",
+                Dirpath = "01",
+                DateStart = DateTime.Parse("2020-05-15"),
+                DateEnd = null
+            };
+            //_context.Claims.Where(x => x.ID == id).FirstOrDefaultAsync();
         }
-        public List<Claim> FilterClaim(string client, string title) 
+
+        public List<Claim> FilterClaim(string title) 
         {
             return DataSource().Where(x => x.Title.Contains(title)).ToList();
         }
 
         //////////////
-        private List<Claim> DataSource()
+        public List<Claim> DataSource()
         {
             return new List<Claim>()
             { 
-                new Claim() {ID = 1, ClientID = 1, Title = "Cylinders of tailgate are leaking", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2019-10-15") },
+                new Claim() {ID = 1, ClientID = 1, Title = "Cylinders of tailgate are leaking", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2019-10-15"), DateEnd = DateTime.Parse("2019-10-24") },
                 new Claim() {ID = 2, ClientID = 2, Title = "Trailer cover is torn", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-5-5") },
                 new Claim() {ID = 3, ClientID = 1, Title = "Frame get rusted", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2019-01-30") },
                 new Claim() {ID = 4, ClientID = 4, Title = "We're not getting board extensions", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-05-23") },

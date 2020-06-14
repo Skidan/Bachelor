@@ -1,22 +1,35 @@
-﻿@model Qualify.Models.Claim
+﻿@using Qualify.Models
+@model Claim
 @{
-    Layout = "_Layout";
+    ViewData["Title"] = "Add new claim";
+
 }
 <h1 class="form-heading">Add new claim</h1>
-    <form method="post" asp-action="AddClaim">
-        <label asp-for="ClientID" class="form-label">Client</label>
-        <input asp-for="ClientID" class="form-control"/>
+@if (ViewBag.Success == true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Oh yeah, alright.</strong> You added the claim successfully. <br />
+        Click <a asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@ViewBag.ClaimId">here</a> to view whar you've declared.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
 
-        <label asp-for="Title" class="form-label">Title</label>
-        <input asp-for="Title" class="form-control"/>
+<form method="post" asp-action="AddClaim">
+    <label asp-for="ClientID" class="form-label">Client</label>
+    <input asp-for="ClientID" class="form-control" />
 
-        <label asp-for="Description" class="form-label">Description</label>
-        <textarea asp-for="Description" class="form-control"></textarea>
+    <label asp-for="Title" class="form-label">Title</label>
+    <input asp-for="Title" class="form-control" />
 
-        <label asp-for="DateStart" class="form-label">Registration date</label>
-        <input asp-for="DateStart" class="form-control"/>
+    <label asp-for="Description" class="form-label">Description</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
 
-        <input type="submit" value="Register the claim" class="form-button button btn-success" />
-        
+    <label asp-for="DateStart" class="form-label">Registration date</label>
+    <input asp-for="DateStart" class="form-control" />
 
-    </form>
+    <input type="submit" value="Register the claim" class="form-button button btn-success" />
+
+
+</form>

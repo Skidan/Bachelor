@@ -13,30 +13,39 @@ namespace Qualify.Controllers
     public class ClaimController : Controller
     {
         private readonly ClaimRepository _claimRepository = null;
-        public ClaimController()
+        public ClaimController(ClaimRepository claimRepository)
         {
-            _claimRepository = new ClaimRepository();
+            _claimRepository = claimRepository;
         }
-        public IActionResult Index()
+        public async Task<ViewResult> Index()
         {
-            var data = _claimRepository.GetAllClaims();
-
+            var data = await _claimRepository.GetAllClaims();
             return View(data);
         }
 
-        public IActionResult ViewClaim(int id) 
+        
+        public async Task<ViewResult> ViewClaim(int id) 
         {
-            return View();
+            var data = await _claimRepository.GetClaimById(id);
+            ViewBag.ClaimId = id;
+            return View(data);
         }
 
-        public IActionResult AddClaim()
+        public ViewResult AddClaim(bool isSuccess = false, int claimId = 0)
         {
+            ViewBag.Success = isSuccess;
+            ViewBag.ClaimId = claimId;
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddClaim(Claim claim)
+        public async Task<IActionResult> AddClaim(Claim claim)
         {
+            int id = await _claimRepository.AddClaim(claim);
+            if (id > 0)
+            {
+                return RedirectToAction(nameof(AddClaim), new {isSuccess = true, bookId = id});
+            }
             return View();
         }
     }

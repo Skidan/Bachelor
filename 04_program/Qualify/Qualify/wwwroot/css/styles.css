@@ -97,6 +97,16 @@ section {
     .my-container {
       width: 1800px; } }
 
+.content-container {
+  margin: 14px 28px;
+  color: #7a7a7a;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 24px; }
+  .content-container dt {
+    font-weight: bold;
+    margin-top: 7px; }
+
 .fluid {
   display: block; }
   @media screen and (min-width: 589px) {
@@ -493,6 +503,38 @@ select.form-control:focus::-ms-value {
 .form-control-range {
   display: block;
   width: 100%; }
+
+.alert {
+  position: relative;
+  padding: 14px 21px;
+  margin: 0 28px;
+  margin-bottom: 14px;
+  border: 1px solid transparent;
+  border-radius: 3.5px; }
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
+
+.alert-dismissible {
+  padding-right: 4rem; }
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 7px 14px;
+  color: inherit;
+  font-size: 28px;
+  background-color: transparent; }
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear; }
+
+.fade.show {
+  opacity: 1; }
 
 .content-item {
   background-color: #7a7a7a;

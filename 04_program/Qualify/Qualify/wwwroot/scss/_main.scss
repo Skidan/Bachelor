@@ -18,6 +18,17 @@
     width: 1800px;
   }
 }
+.content-container {
+    margin: $basic $basic * 2;
+    color: $color-dark;
+    font-family: $font-regular;
+    font-size: 16px;
+    line-height: 24px;
+    & dt {
+        font-weight: bold;
+        margin-top: $basic/2;
+    }
+}
 .fluid {
   display: block;
   @media screen and (min-width: 589px) {
@@ -141,7 +152,7 @@
     height: $basic * 3;
 }
 @import "_formcontrol";
-
+@import "_notifications";
 .content-item {
   // outline: $test;
   background-color: $color-dark;
