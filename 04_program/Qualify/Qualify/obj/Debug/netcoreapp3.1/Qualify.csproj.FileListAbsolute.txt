@@ -439,10 +439,6 @@ D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.cspr
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.MvcApplicationPartsAssemblyInfo.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Qualify.MvcApplicationPartsAssemblyInfo.cache
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ToolLists\Create.cshtml.g.cs
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ToolLists\Delete.cshtml.g.cs
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ToolLists\Details.cshtml.g.cs
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ToolLists\Edit.cshtml.g.cs
-D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ToolLists\Index.cshtml.g.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Claim\Index.cshtml.g.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\libman.json
+D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Claim\AddClaim.cshtml.g.cs

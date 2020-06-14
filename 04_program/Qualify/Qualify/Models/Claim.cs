@@ -18,6 +18,5 @@ namespace Qualify.Models
         public Client Client { get; set; }
         public ICollection<ClaimHistory> ClaimHistories { get; set; }
         public ICollection<ClaimExpence> ClaimExpences { get; set; }
-
     }
 }

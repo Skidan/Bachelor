@@ -1,10 +1,10 @@
-﻿@model IEnumerable<Qualify.Models.ClaimModel>
+﻿@model IEnumerable<Qualify.Models.Claim>
 @{
     Layout = "_Layout";
 }
 
 <div class="minor-navigation">
-    <p>Here will be minor navigation bar</p>
+    <a class="button btn-success" asp-controller="claim" asp-action="addclaim">Add a claim</a>
 </div>
 
 <div class="flex-scroll-container">

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.Extensions.FileProviders.Physical;
+using Qualify.Models;
 using Qualify.Repository;
 
 namespace Qualify.Controllers
@@ -22,11 +23,19 @@ namespace Qualify.Controllers
 
             return View(data);
         }
+
         public IActionResult ViewClaim(int id) 
         {
             return View();
         }
+
         public IActionResult AddClaim()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AddClaim(Claim claim)
         {
             return View();
         }

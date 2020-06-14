@@ -1,4 +1,5 @@
 ﻿using Qualify.Models;
+using Qualify.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,15 @@ namespace Qualify.Repository
 {
     public class ClaimRepository
     {
+        private readonly QualifyContext _context = null;
+        public ClaimRepository(QualifyContext context)
+        {
+            _context = context;
+        }
+        public int AddClaim(Claim claim)
+        {
+            return 1;
+        }
         public List<Claim> GetAllClaims() 
         {
             return DataSource();

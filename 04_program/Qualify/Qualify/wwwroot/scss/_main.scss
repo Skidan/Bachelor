@@ -140,6 +140,8 @@
     display: block;
     height: $basic * 3;
 }
+@import "_formcontrol";
+
 .content-item {
   // outline: $test;
   background-color: $color-dark;
