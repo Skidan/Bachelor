@@ -73,16 +73,7 @@ namespace Qualify.Repository
                 };
                 return claimDetails;
             }
-            return new Claim() 
-            {
-                ID = 166,
-                ClientID = 01,
-                Title = "01",
-                Description = "01",
-                Dirpath = "01",
-                DateStart = DateTime.Parse("2020-05-15"),
-                DateEnd = null
-            };
+            return null;
             //_context.Claims.Where(x => x.ID == id).FirstOrDefaultAsync();
         }
 
