@@ -2,6 +2,7 @@
 	display: none;
 	@media screen and (min-width: 589px) {
 		display: inline-block;
+        font-size: 0;
     vertical-align: top;
     margin: $basic/2;
 		border-radius: $basic / 2;

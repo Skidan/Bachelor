@@ -8,20 +8,37 @@
 </div>
 
 <div class="flex-scroll-container">
-    @foreach (var claim in Model)
-    {
-        string currentClientName = "Undefined Client";
-        foreach (var client in ViewBag.ClientsList)
+    <table class="suvestine">
+        <tr>
+            <th class="numb">#</th>
+            <th class="clnt">Client</th>
+            <th class="titl">Title</th>
+            <th class="desc">Description</th>
+            <th class="regd">Registered</th>
+            <th class="clos">Closed</th>
+        </tr>
+
+        @foreach (var claim in Model)
         {
-            if (client.ID == claim.ClientID)
+            string currentClientName = "Undefined Client";
+            foreach (var client in ViewBag.ClientsList)
             {
-                currentClientName = client.Name;
+                if (client.ID == claim.ClientID)
+                {
+                    currentClientName = client.Name;
+                }
             }
-        }
-        <a class="content-item" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">
-            <h3>@claim.Title</h3>
-            <p><strong>@currentClientName</strong>, <em>@claim.DateStart.ToString("yyyy-MM-dd")</em></p><br />
-            <p>@claim.Description</p>
-        </a>
-    }
-</div>
+            <tr data-href="#">
+                <td class="numb">
+                    <a asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">@claim.ID</a>
+                </td>
+                <td class="clnt">@currentClientName</td>
+                <td class="titl">@claim.Title</td>
+                <td class="desc">@claim.Description</td>
+                <td class="regd">@claim.DateStart.ToString("yyyy-MM-dd")</td>
+                <td class="clos">@claim.DateEnd</td>
+            </tr>
+
+         }
+    </table>
+    </div>
