@@ -12,5 +12,8 @@ namespace Qualify.Models
         public string Description { get; set; }
         public int DepartmentID { get; set; }
         public int ClaimID { get; set; }
+
+        public Claim Claim { get; set; }
+        public Department Department { get; set; }
     }
 }

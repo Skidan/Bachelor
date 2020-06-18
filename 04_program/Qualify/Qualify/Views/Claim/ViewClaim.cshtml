@@ -10,7 +10,7 @@
         <dd>@Model.Title</dd>
 
         <dt>Client:</dt>
-        <dd>@Model.ClientID</dd>
+        <dd>@ViewBag.ClientName</dd>
 
         <dt>Description:</dt>
         <dd>@Model.Description</dd>
@@ -25,7 +25,7 @@
         else
         {
             <dt>Закрыт:</dt>
-            <dd>А нифига не закрыт ещё</dd>
+            <dd>Ещё не закрыт</dd>
         }
 
     </dl>

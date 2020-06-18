@@ -10,9 +10,17 @@
 <div class="flex-scroll-container">
     @foreach (var claim in Model)
     {
+        string currentClientName = "Undefined Client";
+        foreach (var client in ViewBag.ClientsList)
+        {
+            if (client.ID == claim.ClientID)
+            {
+                currentClientName = client.Name;
+            }
+        }
         <a class="content-item" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">
             <h3>@claim.Title</h3>
-            <p><strong>@claim.ClientID</strong>, <em>@claim.DateStart.ToString("yyyy-MM-dd")</em></p><br />
+            <p><strong>@currentClientName</strong>, <em>@claim.DateStart.ToString("yyyy-MM-dd")</em></p><br />
             <p>@claim.Description</p>
         </a>
     }

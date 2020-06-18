@@ -45,5 +45,14 @@ INSERT INTO Employees (Name, DepartmentID, Position)
     ('Siuntyte Atvaziaite',6,'Manager'),
     ('Keturi Ziedai',7,'Auditor');
 GO
-    
-    
+
+INSERT INTO Claims (ClientID, Title, Description, DateStart, DateEnd)
+    VALUES
+    (1, 'Cylinders of tailgate are leaking', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-06-24 00:00:00.0000000', '2019-10-15 00:00:00.0000000'),
+    (2, 'Trailer cover is torn', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-5-5 00:00:00.0000000', null),
+    (1, 'Frame get rusted', 'Place a full description of a particular claim here to show the text within different types of containers', '2019-01-30 00:00:00.0000000', null),
+    (4, 'We are not got board extensions', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-05-23 00:00:00.0000000', null),
+    (3, 'Brakes not working as expected', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-06-06 00:00:00.0000000', null),
+    (7, 'Mudguards not fits 710/50 R26.5 tires', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-3-2 00:00:00.0000000', null),
+    (6, 'Loose paint on trailer', 'Place a full description of a particular claim here to show the text within different types of containers', '2020-4-16 00:00:00.0000000', null);
+GO

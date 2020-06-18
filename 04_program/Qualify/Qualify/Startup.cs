@@ -28,6 +28,7 @@ namespace Qualify
             service.AddRazorPages().AddRazorRuntimeCompilation();
 #endif
             service.AddScoped<ClaimRepository, ClaimRepository>();
+            service.AddScoped<ClientRepository, ClientRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
