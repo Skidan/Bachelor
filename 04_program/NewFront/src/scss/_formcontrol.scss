@@ -1,0 +1,101 @@
+.form-button {
+  display: block;
+  padding: $basic/2 $basic;
+  margin: $basic $basic * 2;
+  font-size: $basic;
+  line-height: $basic * 1.5;
+  color: #495057;
+}
+
+.form-heading {
+  display: block;
+  padding: $basic/2 $basic;
+  margin: 0 $basic * 2;
+  font-size: $basic * 2;
+  line-height: $basic * 3;
+  color: #495057;
+}
+
+.form-label {
+  display: block;
+  padding: $basic/2 $basic;
+  margin: 0 $basic * 2;
+  font-size: $basic;
+  line-height: $basic * 1.5;
+  color: #495057;
+}
+
+.form-control {
+  display: block;
+  resize: none;
+  width: calc(100% - 84px);
+  padding: $basic/2 $basic;
+  margin: 0 $basic * 2;
+  font-size: $basic;
+  line-height: $basic * 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: $basic / 4;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+select.form-control:not([size]):not([multiple]) {
+  height: calc(2.25rem + 2px);
+}
+
+select.form-control:focus::-ms-value {
+  color: #495057;
+  background-color: #fff;
+}
+
+.form-control-file,
+.form-control-range {
+  display: block;
+  width: 100%;
+}

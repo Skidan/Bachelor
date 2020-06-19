@@ -1,0 +1,27 @@
+#menu-main {
+  // outline: 1px dotted red;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.menu-item {
+  display: block;
+  flex-grow: 0;
+  border-bottom: solid 1px $color-dark;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.menu-link {
+  display: block;
+  line-height: $basic * 1.5;
+  padding: $basic;
+  transition: padding .3s;
+
+  &:hover {
+    padding: $basic $basic*0.5 $basic $basic * 1.5;
+  }
+}
