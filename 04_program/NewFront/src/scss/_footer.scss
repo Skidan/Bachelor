@@ -1,3 +1,7 @@
 #footer {
-  //
+  flex-grow: 0;
+  flex-shrink: 0;
+  height: $basic * 2;
+  line-height: $basic * 2;
+  background-color: $color-dark;
 }

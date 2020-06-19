@@ -1,3 +1,5 @@
+#breadcrumbs {}
+
 .metabox {
   display: none;
 
@@ -15,8 +17,8 @@
     padding: $basic/2 $basic;
     font-size: $basic;
     line-height: $basic * 2;
-    color: $color-bg;
-    background-color: $color-dark;
+    color: $color-light;
+    background: darken($color-bgdark, 10%);
     padding-left: $basic * 2;
     position: relative;
 
@@ -29,12 +31,12 @@
       border-style: solid;
       border-width: $basic;
       filter: drop-shadow(3px 0 2px rgba(0, 0, 0, .2));
-      border-left-color: $color-dark;
+      border-left-color: darken($color-bgdark, 10%);
       left: 0;
     }
 
     &:first-of-type {
-      color: $color-light;
+      color: $color-dark;
       padding-left: $basic;
 
       &::before {
@@ -43,8 +45,8 @@
     }
 
     &:last-of-type {
-      color: $color-light !important;
-      background-color: $color-main;
+      color: $color-main !important;
+      background-color: $color-light;
     }
   }
 }

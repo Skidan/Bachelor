@@ -1,24 +1,14 @@
 /************ MAIN STYLES *************/
 #wrapper {
   margin: 0 auto;
+  // text-align: center;
 
-  @media screen and (min-width: 769px) and (max-width: 1200px) {
-    width: 740px;
-  }
-
-  @media screen and (min-width: 1201px) and (max-width: 1600px) {
-    width: 960px;
-  }
-
-  @media screen and (min-width: 1601px) and (max-width: 1919px) {
-    width: 1420px;
-  }
-
-  @media screen and (min-width: 1920px) {
-    width: 1800px;
-  }
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  min-width: 600px;
+  height: 100%;
 }
-
 
 @import "_graphics";
 
@@ -26,8 +16,8 @@
 
 @import "_mainmenu";
 
-@import "_breadcrumbs";
-
 @import "_maincontent";
 
 @import "_footer";
+
+@import "_breadcrumbs";

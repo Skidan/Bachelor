@@ -7,6 +7,12 @@
 	font-size: 0
 }
 
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
 // V A R I A B L E S
 //colors
 $color-main: #1f3948;
@@ -17,6 +23,7 @@ $color-bg: #e9eaec;
 $color-bgdark: #c2c3c4;
 $gradient-main: linear-gradient(to bottom, $color-light, lighten($color-main, 10%) 48%, lighten($color-main, 5%) 52%, $color-dark);
 $gradient-bg: linear-gradient(to bottom, white, $color-bg 49%, lighten($color-bgdark, 10%) 51%, $color-bgdark);
+$gradient-grey: linear-gradient(to bottom, #393939, #646464);
 $bgimg: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAKCAMAAABL52QCAAAABlBMVEXCw8Tp6uwFw7MwAAAAF0lEQVR4AWNgYAQCCMEAIoAQgkA8/LIABOwAKWIaZEkAAAAASUVORK5CYII=);
 //text
 $basic: 16px;

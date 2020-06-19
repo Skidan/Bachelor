@@ -1,3 +1,48 @@
+input {
+  display: block;
+  font-size: $basic;
+  vertical-align: top;
+  margin: $basic / 2;
+  background-color: rgba(255, 255, 255, .2);
+  color: $color-main;
+  padding: 0 $basic;
+  border-radius: $basic / 4;
+  border: 1px solid $color-bgdark;
+  line-height: $basic * 2;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .1);
+  transition: box-shadow .3s;
+  transition: border .3s;
+  transition: background-color .3s;
+
+  &:focus {
+    border: 1px solid #80bdff;
+    outline: 0;
+    box-shadow: 0 $basic/4 $basic/4 rgba(0, 123, 255, 0.25);
+    background-color: rgba(255, 255, 255, .5);
+  }
+}
+
+input[type=submit] {
+  display: inline-block;
+  background-color: rgb(31, 57, 72);
+  color: $color-bg;
+  box-shadow: 0 4px 4px rgba(31, 57, 72, .2);
+  border-color: $color-dark;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: $color-light;
+    color: $color-bg;
+    box-shadow: 0 4px 6px rgba(18, 126, 155, .4);
+  }
+
+  &:active {
+    background-color: darken($color-light, 10%);
+    color: $color-bg;
+    box-shadow: 0 2px 6px rgba(18, 126, 155, .4);
+  }
+}
+
 .form-button {
   display: block;
   padding: $basic/2 $basic;
