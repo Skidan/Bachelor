@@ -1,3 +1,42 @@
-﻿<div class="flex-scroll-container">
-    <div class="content-item">Some content to be displayed in item<br />Отображаем хоум вью</div>
-</div>
+﻿@using Qualify.Models
+@model IEnumerable<Claim>
+@{
+    ViewData["Title"] = "Qualify";
+}
+
+    <div class="contentfield">
+        <div class="claim-actions">
+            <h4>Unsolved claims:</h4>
+            <hr class="divider">
+            <div class="table">
+                <div class="row-headings">
+                    <div class="cell id"><span>#</span></div>
+                    <div class="cell client"><span>Client</span></div>
+                    <div class="cell title"><span>Title</span></div>
+                    <div class="cell desc"><span>Description</span></div>
+                    <div class="cell start"><span>Started</span></div>
+                    <div class="cell finish"><span>Finished</span></div>
+                </div>
+                <div class="table-content">
+                    @foreach (var claim in Model)
+                    {
+                        string currentClientName = "Undefined Client";
+                        foreach (var client in ViewBag.ClientsList)
+                        {
+                            if (client.ID == claim.ClientID)
+                            {
+                                currentClientName = client.Name;
+                            }
+                        }
+                        <a class="row" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">
+                            <div class="cell id"><span>@claim.ID</span></div>
+                            <div class="cell client"><span>@currentClientName</span></div>
+                            <div class="cell title"><p>@claim.Title</p></div>
+                            <div class="cell desc"><p>@claim.Description</p></div>
+                            <div class="cell start"><span>@claim.DateStart.ToString("yyyy-MM-dd")</span></div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>

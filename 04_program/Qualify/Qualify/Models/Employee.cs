@@ -12,7 +12,7 @@ namespace Qualify.Models
         public int? DepartmentID { get; set; }
         public string? Position { get; set; }
 
-        public ICollection<Action> Actions { get; set; }
+        public ICollection<ClaimHistory> ClaimHistories { get; set; }
         public ICollection<Tool> Tools { get; set; }
         public Department Department { get; set; }
     }

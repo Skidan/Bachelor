@@ -43,6 +43,164 @@ input[type=submit] {
   }
 }
 
+.inline {
+  display: inline-block;
+}
+
+.fromleft {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+}
+
+.fromright {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 0 $basic/2;
+}
+
+.table-content {
+  height: calc(100vh - 242px);
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.row,
+.row-headings {
+  // outline: $test;
+
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: $basic * 3;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  & p {
+    text-indent: 0;
+  }
+
+  & span {
+    font-size: $basic;
+    font-weight: 100;
+  }
+}
+
+.row:nth-child(odd) {
+  background: rgba(0, 0, 0, .1);
+}
+
+.row-headings .cell {
+  text-align: center;
+
+  & span {
+    font-weight: bold;
+    font-size: $basic;
+  }
+}
+
+.cell {
+  // outline: $test;
+
+  text-align: center;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: $basic * 3;
+
+  & span {
+    display: block;
+    line-height: $basic * 2;
+    padding: $basic / 2;
+  }
+}
+
+.id {
+  text-align: right;
+  flex-basis: $basic * 3;
+}
+
+.client {
+  text-align: left;
+  flex-basis: $basic * 6;
+}
+
+.title,
+.caction-title,
+.cexp-type,
+
+.cdocs-name {
+  text-align: left;
+  flex-basis: $basic * 10;
+  flex-shrink: 0;
+  flex-grow: 1;
+}
+
+.desc,
+.caction-desc,
+.cexp-desc,
+.cdocs-desc {
+  text-align: left;
+  flex-basis: $basic * 18;
+  flex-shrink: 0;
+  flex-grow: 5;
+}
+
+.start,
+.prevcheck,
+.nextcheck,
+.finish,
+.caction-startdate,
+.caction-finishdate,
+.cexp-date,
+.cdocs-date {
+  flex-basis: $basic * 10;
+}
+
+.toolt {
+  text-align: left;
+  flex-basis: $basic * 6;
+}
+
+.tdesc {
+  text-align: left;
+  flex-basis: $basic * 18;
+  flex-shrink: 0;
+  flex-grow: 5;
+}
+
+.owner,
+.caction-responsible,
+.cexp-owner {
+  text-align: left;
+  flex-basis: $basic * 12;
+}
+
+.cexp-sum {
+  text-align: right;
+  flex-basis: $basic * 8;
+}
+
+.toolstatus,
+.caction-status,
+.cdocs-status,
+.cdocs-type {
+  // text-align: left;
+  flex-basis: $basic * 10;
+}
+
+
+
+
+// the next code stolen from bootstrap and still not in use
 .form-button {
   display: block;
   padding: $basic/2 $basic;

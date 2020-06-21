@@ -1,32 +1,163 @@
 ﻿@using Qualify.Models
 @model Claim
 @{
-    ViewData["Title"] = "View claim";
+    ViewData["Title"] = "Claim #" + ViewBag.ClaimId + " details";
 }
-<h1 class="form-heading">Claim @ViewBag.ClaimId details</h1>
-<div class="content-container">
-    <dl>
-        <dt>Claim title:</dt>
-        <dd>@Model.Title</dd>
 
-        <dt>Client:</dt>
-        <dd>@ViewBag.ClientName</dd>
+<nav id="breadcrumbs">
+    <div class="metabox">
+        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a class="metabox-main" asp-controller="Claim" asp-action="Index">Claims</a>
+        <a class="metabox-main" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@ViewBag.ClaimId">@ViewBag.ClaimId</a>
+    </div>
+</nav>
 
-        <dt>Description:</dt>
-        <dd>@Model.Description</dd>
+<div class="contentfield">
+    <div class="claim-entity">
+        <div class="claim-body">
+            <h2 class="claim-heading">@Model.Title</h2>
+            <hr class="divider">
+            <div class="claim-objective">
+                <div class="claim-img">
+                    @{
+                        //string docpath = "docs/claims/" + Model.ID + "/" + Model.Dirpath;
+                        string imgpath = "../../img/claims/" + Model.ID + "/" + Model.Dirpath;
+                     }
+                    <img class="claimimg" src="@imgpath">
+                </div>
+                <div class="claim-details">
+                    <div class="details"><span class="claim-client">@ViewBag.ClientName</span></div>
+                    <div class="details"><span class="claim-datestart">@Model.DateStart.ToString("yyyy-MM-dd")</span></div>
+                    @if (Model.DateEnd != null)
+                    {
+                        <div class="details"><span class="claim-datefinish">@Model.DateEnd</span></div>
+                    }
+                    else
+                    {
+                        <div class="details"><span class="claim-datefinish">Not sloved yet</span></div>
+                    }
+                    
+                    <div class="details"><span class="claim-totalexpences">19 256,35 €</span></div>
+                </div>
+            </div>
+            <div class="claim-description">
+                <p>Cia eina kalba apie tam tikros reklamacijos, tiksliai apibriezant kas blogai.</p>
+            </div>
+        </div>
+        <div class="claim-actions">
+            <h4>Claim actions</h4>
+            <hr class="divider">
 
-        <dt>Зарегистрирован:</dt>
-        <dd>@Model.DateStart.ToString("yyyy-MM-dd")</dd>
-        @if (Model.DateEnd != null)
-        {
-            <dt>Закрыт:</dt>
-            <dd>@Model.DateEnd</dd>
-        }
-        else
-        {
-            <dt>Закрыт:</dt>
-            <dd>Ещё не закрыт</dd>
-        }
+            <div class="table">
 
-    </dl>
+                <div class="row-headings">
+                    <div class="cell id"><span>#</span></div>
+                    <div class="cell caction-title"><span>Action</span></div>
+                    <div class="cell caction-desc"><span>Description</span></div>
+                    <div class="cell caction-responsible"><span>Responsible</span></div>
+                    <div class="cell caction-startdate"><span>Action started</span></div>
+                    <div class="cell caction-finishdate"><span>Action finished</span></div>
+                    <div class="cell caction-status"><span>Status</span></div>
+                </div>
+
+                @{
+                    if (ViewBag.CurrentHistory?.Count > 0 )
+                    {
+                        foreach (var claimAction in ViewBag.CurrentHistory)
+                        {
+                            string currentResponsibleName = "Undefined responsible";
+                            foreach (var human in ViewBag.EmployeeList)
+                            {
+                                if(human.ID == claimAction.EmployeeID)
+                                {
+                                    currentResponsibleName = human.Name;
+                                }
+                            }
+                            <a class="row" href="#">
+                                <div class="cell id"><span>@claimAction.ID</span></div>
+                                <div class="cell caction-title"><span>Fixing</span></div>
+                                <div class="cell caction-desc"><p>@claimAction.Description</p></div>
+                                <div class="cell caction-responsible"><span>@currentResponsibleName</span></div>
+                                <div class="cell caction-startdate"><span>@claimAction.DateStart</span></div>
+                                <div class="cell caction-finishdate"><span>@claimAction.DateEnd</span></div>
+                                <div class="cell caction-status"><span>@claimAction.Performed</span></div>
+                            </a>
+                        }
+                    }
+                    else
+                    {
+                        <a class="row" href="#">
+                            <div class="cell id"><span>---</span></div>
+                            <div class="cell caction-title"><span>---</span></div>
+                            <div class="cell caction-desc"><p>---</p></div>
+                            <div class="cell caction-responsible"><span>---</span></div>
+                            <div class="cell caction-startdate"><span>---</span></div>
+                            <div class="cell caction-finishdate"><span>---</span></div>
+                            <div class="cell caction-status"><span>---</span></div>
+                        </a>
+                    }
+
+                }
+            </div>
+
+            <div class="actionbar">
+                <div class="actionbox"><a class="button btn-primary" asp-controller="ClaimHistory" asp-action="AddHistory" asp-route-ClaimID="@ViewBag.ClaimId">Add</a></div>
+            </div>
+
+        </div>
+
+        <div class="claim-expences">
+            <h4>Claim expences</h4>
+            <hr class="divider">
+            <div class="table">
+                <div class="row-headings">
+                    <div class="cell id"><span>#</span></div>
+                    <div class="cell cexp-type"><span>Type</span></div>
+                    <div class="cell cexp-desc"><span>Description</span></div>
+                    <div class="cell cexp-sum"><span>Sum</span></div>
+                    <div class="cell cexp-date"><span>Expence date</span></div>
+                    <div class="cell cexp-owner"><span>Owner</span></div>
+                </div>
+                <a class="row" href="#">
+                    <div class="cell id"><span>1</span></div>
+                    <div class="cell cexp-type"><span>Client expences</span></div>
+                    <div class="cell cexp-desc">
+                        <p>Client performed some painting actions by himself</p>
+                    </div>
+                    <div class="cell cexp-sum"><span>2 987,00 €</span></div>
+                    <div class="cell cexp-date"><span>2020-02-03</span></div>
+                    <div class="cell cexp-owner"><span>Painting bar</span></div>
+                </a>
+            </div>
+            <div class="actionbar">
+                <div class="actionbox"><a class="button btn-primary" href="#">Add</a></div>
+            </div>
+        </div>
+
+        <div class="claim-documents">
+            <h4>Claim documents</h4>
+            <hr class="divider">
+            <div class="table">
+                <div class="row-headings">
+                    <div class="cell id"><span>#</span></div>
+                    <div class="cell cdocs-name"><span>Document name</span></div>
+                    <div class="cell cdocs-type"><span>Document type</span></div>
+                    <div class="cell cdocs-desc"><span>Description</span></div>
+                    <div class="cell cdocs-date"><span>Add date</span></div>
+                    <div class="cell cdocs-status"><span>Status</span></div>
+                </div>
+                <a class="row" href="#">
+                    <div class="cell id"><span>1</span></div>
+                    <div class="cell cdocs-name"><span>F0-2020-06-05/001</span></div>
+                    <div class="cell cdocs-type"><span>Invoice</span></div>
+                    <div class="cell cdocs-desc"><p>Transportation invoice</p></div>
+                    <div class="cell cdocs-date"><span>2020-02-03</span></div>
+                    <div class="cell cdocs-status"><span>Active</span></div>
+                </a>
+            </div>
+            <div class="actionbar">
+                <div class="actionbox"><a class="button btn-primary" href="#">Add</a></div>
+            </div>
+        </div>
+    </div>
 </div>

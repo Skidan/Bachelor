@@ -1,0 +1,40 @@
+﻿@using Qualify.Models
+@model ClaimHistory
+@{
+    ViewData["Title"] = "Add new action to the claim";
+
+}
+<h1 class="form-heading">Add new claim</h1>
+@if (ViewBag.Success == true)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Oh yeah, alright.</strong> You added the claim successfully. <br />
+        Click <a asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@ViewBag.ClaimId">here</a> to view whar you've declared.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+@{ 
+
+}
+
+<form method="post" asp-action="AddHistory">
+
+    <label asp-for="ClaimID" class="form-label">Claim number</label>
+    <textarea asp-for="ClaimID" class="form-control">@ViewBag.ClaimId</textarea>
+
+    <label asp-for="EmployeeID" class="form-label"></label>
+    <select asp-for="EmployeeID" class="form-control" asp-items="ViewBag.Employees">
+        <option value="">Please choose an employee name</option>
+    </select>
+
+    <label asp-for="Description" class="form-label">Description</label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+
+
+    <input type="submit" value="Register new action" class="form-button button btn-success" />
+
+
+</form>

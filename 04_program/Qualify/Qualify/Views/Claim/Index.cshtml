@@ -1,44 +1,59 @@
-﻿@model IEnumerable<Qualify.Models.Claim>
+﻿@using Qualify.Models
+@model IEnumerable<Claim>
 @{
     Layout = "_Layout";
+    ViewData["Title"] = "Claim list";
 }
 
-<div class="minor-navigation">
-    <a class="button btn-success" asp-controller="claim" asp-action="addclaim">Add a claim</a>
+<nav id="breadcrumbs">
+    <div class="metabox">
+        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a class="metabox-main" asp-controller="Claim" asp-action="Index">Claims</a>
+    </div>
+</nav>
+
+<div class="actionbar">
+    <div class="actionbox"><a class="button btn-primary" asp-controller="claim" asp-action="addclaim">Add</a></div>
+    <div class="actionbox">
+        <form>
+            <input class="inline fromleft" type="search" placeholder="Search...">
+            <input class="fromright" type="submit" value="Find">
+        </form>
+    </div>
 </div>
 
-<div class="flex-scroll-container">
-    <table class="suvestine">
-        <tr>
-            <th class="numb">#</th>
-            <th class="clnt">Client</th>
-            <th class="titl">Title</th>
-            <th class="desc">Description</th>
-            <th class="regd">Registered</th>
-            <th class="clos">Closed</th>
-        </tr>
+<div class="contentfield">
 
-        @foreach (var claim in Model)
-        {
-            string currentClientName = "Undefined Client";
-            foreach (var client in ViewBag.ClientsList)
+    <div class="table">
+        <div class="row-headings">
+            <div class="cell id"><span>#</span></div>
+            <div class="cell client"><span>Client</span></div>
+            <div class="cell title"><span>Title</span></div>
+            <div class="cell desc"><span>Description</span></div>
+            <div class="cell start"><span>Started</span></div>
+            <div class="cell finish"><span>Finished</span></div>
+        </div>
+        <div class="table-content">
+            @foreach (var claim in Model)
             {
-                if (client.ID == claim.ClientID)
+                string currentClientName = "Undefined Client";
+                foreach (var client in ViewBag.ClientsList)
                 {
-                    currentClientName = client.Name;
+                    if (client.ID == claim.ClientID)
+                    {
+                        currentClientName = client.Name;
+                    }
                 }
+                <a class="row" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">
+                    <div class="cell id"><span>@claim.ID</span></div>
+                    <div class="cell client"><span>@currentClientName</span></div>
+                    <div class="cell title"><p>@claim.Title</p></div>
+                    <div class="cell desc"><p>@claim.Description</p></div>
+                    <div class="cell start"><span>@claim.DateStart.ToString("yyyy-MM-dd")</span></div>
+                    <div class="cell finish"><span>@claim.DateEnd</span></div>
+                </a>
             }
-            <tr data-href="#">
-                <td class="numb">
-                    <a asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">@claim.ID</a>
-                </td>
-                <td class="clnt">@currentClientName</td>
-                <td class="titl">@claim.Title</td>
-                <td class="desc">@claim.Description</td>
-                <td class="regd">@claim.DateStart.ToString("yyyy-MM-dd")</td>
-                <td class="clos">@claim.DateEnd</td>
-            </tr>
-
-         }
-    </table>
+        </div>
     </div>
+
+</div>

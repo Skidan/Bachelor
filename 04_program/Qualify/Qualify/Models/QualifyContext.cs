@@ -16,7 +16,6 @@ namespace Qualify.Service
         }
 
         public DbSet<Claim> Claims { get; set; }
-        public DbSet<Models.Action> Actions { get; set; }
         public DbSet<ClaimExpence> ClaimExpences {get; set;}
         public DbSet<ClaimHistory> ClaimHistories {get; set;}
         public DbSet<Client> Clients {get; set;}

@@ -443,3 +443,4 @@ D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\
 D:\NURE\Bachelor\04_program\Qualify\Qualify\bin\Debug\netcoreapp3.1\libman.json
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Claim\AddClaim.cshtml.g.cs
 D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\Claim\ViewClaim.cshtml.g.cs
+D:\NURE\Bachelor\04_program\Qualify\Qualify\obj\Debug\netcoreapp3.1\Razor\Views\ClaimHistory\AddHistory.cshtml.g.cs

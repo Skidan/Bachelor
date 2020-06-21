@@ -29,6 +29,8 @@ namespace Qualify
 #endif
             service.AddScoped<ClaimRepository, ClaimRepository>();
             service.AddScoped<ClientRepository, ClientRepository>();
+            service.AddScoped<ClaimHistoryRepository, ClaimHistoryRepository>();
+            service.AddScoped<EmployeeRepository, EmployeeRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

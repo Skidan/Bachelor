@@ -1,0 +1,85 @@
+#header {
+  flex-shrink: 0;
+  height: $basic * 4;
+  flex-basis: $basic * 4;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+#heading {
+  background: $color-dark;
+  flex-basis: $basic * 4;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.impast {
+  // outline: 1px dotted red;
+  flex-grow: 1;
+  height: $basic * 4;
+  text-align: left;
+}
+
+.mainheading {
+  font-family: $font-regular;
+  margin: 0;
+  margin-left: $basic * 2;
+  color: $color-bg;
+  font-size: $basic * 1.75;
+}
+
+.logininfo {
+  //flex-basis: 3em;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.avatar {
+  //outline: $test;
+  width: $basic * 4;
+  height: $basic * 4;
+  //flex-basis: 3em;
+  flex-grow: 0;
+  background: $avatar no-repeat center;
+}
+
+.person {
+  flex-basis: $basic * 5;
+  flex-grow: 1;
+}
+
+.person-name,
+.person-position {
+  padding: 0 $basic * 0.5;
+  // outline: $test;
+  display: block;
+  height: $basic * 2.25;
+  line-height: $basic * 2.25;
+  color: $color-light;
+  font-size: $basic * 1.75;
+}
+
+.person-position {
+  font-size: $basic;
+  color: $color-bg;
+  height: $basic * 1.75;
+  line-height: $basic * 1.75;
+}
+
+.manipulations {
+  // outline: $test;
+  display: inline-block;
+  background: $logout no-repeat center;
+  flex-basis: $basic * 4;
+  flex-grow: 0;
+  height: $basic * 4;
+}

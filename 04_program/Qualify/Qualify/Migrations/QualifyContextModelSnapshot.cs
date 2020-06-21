@@ -19,32 +19,6 @@ namespace Qualify.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Qualify.Models.Action", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("Done")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("EmployeeID")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("Performed")
-                        .HasColumnType("bit");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("EmployeeID");
-
-                    b.ToTable("Actions");
-                });
-
             modelBuilder.Entity("Qualify.Models.Claim", b =>
                 {
                     b.Property<int>("ID")
@@ -112,17 +86,32 @@ namespace Qualify.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ActionID")
-                        .HasColumnType("int");
-
                     b.Property<int>("ClaimID")
                         .HasColumnType("int");
 
+                    b.Property<DateTime?>("DateEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateStart")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Done")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("EmployeeID")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("Performed")
+                        .HasColumnType("bit");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("ActionID");
-
                     b.HasIndex("ClaimID");
+
+                    b.HasIndex("EmployeeID");
 
                     b.ToTable("ClaimHistories");
                 });
@@ -238,15 +227,6 @@ namespace Qualify.Migrations
                     b.ToTable("ToolTypes");
                 });
 
-            modelBuilder.Entity("Qualify.Models.Action", b =>
-                {
-                    b.HasOne("Qualify.Models.Employee", "Employee")
-                        .WithMany("Actions")
-                        .HasForeignKey("EmployeeID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Qualify.Models.Claim", b =>
                 {
                     b.HasOne("Qualify.Models.Client", "Client")
@@ -258,13 +238,13 @@ namespace Qualify.Migrations
 
             modelBuilder.Entity("Qualify.Models.ClaimExpence", b =>
                 {
-                    b.HasOne("Qualify.Models.Claim", null)
+                    b.HasOne("Qualify.Models.Claim", "Claim")
                         .WithMany("ClaimExpences")
                         .HasForeignKey("ClaimID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Qualify.Models.Department", null)
+                    b.HasOne("Qualify.Models.Department", "Department")
                         .WithMany("ClaimExpences")
                         .HasForeignKey("DepartmentID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -273,15 +253,15 @@ namespace Qualify.Migrations
 
             modelBuilder.Entity("Qualify.Models.ClaimHistory", b =>
                 {
-                    b.HasOne("Qualify.Models.Action", "Action")
-                        .WithMany("ClaimHistories")
-                        .HasForeignKey("ActionID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Qualify.Models.Claim", "Claim")
                         .WithMany("ClaimHistories")
                         .HasForeignKey("ClaimID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Qualify.Models.Employee", "Employee")
+                        .WithMany("ClaimHistories")
+                        .HasForeignKey("EmployeeID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

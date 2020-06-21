@@ -15,11 +15,15 @@ namespace Qualify.Controllers
     {
         private readonly ClaimRepository _claimRepository = null;
         private readonly ClientRepository _clientRepository = null;
+        private readonly ClaimHistoryRepository _historytRepository = null;
+        private readonly EmployeeRepository _employeeRepository = null;
 
-        public ClaimController(ClaimRepository claimRepository, ClientRepository clientRepository)
+        public ClaimController(ClaimRepository claimRepository, ClientRepository clientRepository, ClaimHistoryRepository claimHistoryRepository, EmployeeRepository employeeRepository)
         {
             _claimRepository = claimRepository;
             _clientRepository = clientRepository;
+            _historytRepository = claimHistoryRepository;
+            _employeeRepository = employeeRepository;
         }
         public async Task<ViewResult> Index()
         {
@@ -35,6 +39,9 @@ namespace Qualify.Controllers
             ViewBag.ClaimId = id;
             var currentClient = await _clientRepository.GetClientNameByClaimId(id);
             ViewBag.ClientName = currentClient.Name;
+            ViewBag.CurrentHistory = await _historytRepository.GetHistoriesByClaimId(id);
+            ViewBag.EmployeeList = await _employeeRepository.GetEmployees();
+
             return View(data);
         }
 

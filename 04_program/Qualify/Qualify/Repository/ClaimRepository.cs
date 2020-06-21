@@ -26,7 +26,7 @@ namespace Qualify.Repository
                 Title = claim.Title,
                 Description = claim.Description,
                 DateStart = claim.DateStart,
-                Dirpath = claim.ID.ToString()
+                Dirpath = "/claims/" + claim.ID.ToString()
             };
             await _context.Claims.AddAsync(newClaim);
             await _context.SaveChangesAsync();
@@ -77,24 +77,5 @@ namespace Qualify.Repository
             //_context.Claims.Where(x => x.ID == id).FirstOrDefaultAsync();
         }
 
-        //public List<Claim> FilterClaim(string title) 
-        //{
-        //    return DataSource().Where(x => x.Title.Contains(title)).ToList();
-        //}
-
-        ////////////////
-        //public List<Claim> DataSource()
-        //{
-        //    return new List<Claim>()
-        //    { 
-        //        new Claim() {ID = 1, ClientID = 1, Title = "Cylinders of tailgate are leaking", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2019-10-15"), DateEnd = DateTime.Parse("2019-10-24") },
-        //        new Claim() {ID = 2, ClientID = 2, Title = "Trailer cover is torn", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-5-5") },
-        //        new Claim() {ID = 3, ClientID = 1, Title = "Frame get rusted", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2019-01-30") },
-        //        new Claim() {ID = 4, ClientID = 4, Title = "We're not getting board extensions", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-05-23") },
-        //        new Claim() {ID = 5, ClientID = 3, Title = "Brakes not working as expected", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-06-06") },
-        //        new Claim() {ID = 6, ClientID = 1, Title = "Mudguards not fits 710/50 R26.5\" tires", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-3-2") },
-        //        new Claim() {ID = 7, ClientID = 6, Title = "Loose paint on trailer", Description = "Place a full description of a particular claim here to show the text within different types of containers", DateStart = DateTime.Parse("2020-4-16") }
-        //    };
-        //}
     }
 }

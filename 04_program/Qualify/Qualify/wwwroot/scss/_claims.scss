@@ -1,0 +1,57 @@
+.claim-entity {
+  height: calc(100vh - 144px);
+  overflow-y: auto;
+}
+
+.divider {
+  display: block;
+  font-size: $basic;
+  background: $color-light;
+  height: 2px;
+  margin: 0 $basic;
+  margin-bottom: $basic;
+}
+
+.claim-objective {
+  // outline: 1px dotted green;
+
+  display: block;
+  width: 100%
+}
+
+.claim-img,
+.claim-details {
+  // outline: $test;
+
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+}
+
+.claim-img {
+  height: $basic * 10;
+  overflow: hidden;
+}
+
+.claimimg {
+  height: inherit;
+  vertical-align: middle;
+}
+
+.details>span {
+  font-size: $basic;
+  margin: $basic / 2 $basic;
+}
+
+
+.claim-client {
+  font-weight: bold !important;
+  font-size: $basic * 2 !important;
+  line-height: $basic * 2.5 !important;
+}
+
+.claim-totalexpences {
+  font-weight: bold !important;
+  font-size: $basic * 1.5 !important;
+  line-height: $basic * 2 !important;
+}
