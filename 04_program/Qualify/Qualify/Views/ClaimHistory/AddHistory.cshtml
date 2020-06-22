@@ -1,7 +1,7 @@
 ﻿@using Qualify.Models
 @model ClaimHistory
 @{
-    ViewData["Title"] = "Add new action to the claim";
+    ViewData["Title"] = "Добавить новое действие к рекламации";
 
 }
 <h1 class="form-heading">Add new claim</h1>
@@ -22,19 +22,19 @@
 
 <form method="post" asp-action="AddHistory">
 
-    <label asp-for="ClaimID" class="form-label">Claim number</label>
-    <textarea asp-for="ClaimID" class="form-control">@ViewBag.ClaimId</textarea>
+    <label asp-for="ClaimID" class="form-label">Номер рекламации</label>
+    <input asp-for="ClaimID" class="form-control" value="@ViewBag.ClaimId" />
 
-    <label asp-for="EmployeeID" class="form-label"></label>
+    <label asp-for="EmployeeID" class="form-label">Ответственное лицо</label>
     <select asp-for="EmployeeID" class="form-control" asp-items="ViewBag.Employees">
-        <option value="">Please choose an employee name</option>
+        <option value="">---Пожалуйста, укажите ответственное лицо---</option>
     </select>
 
-    <label asp-for="Description" class="form-label">Description</label>
+    <label asp-for="Description" class="form-label">Описание</label>
     <textarea asp-for="Description" class="form-control"></textarea>
 
 
-    <input type="submit" value="Register new action" class="form-button button btn-success" />
+    <input type="submit" value="Зарегистрировать новое действие" class="form-button button btn-success" />
 
 
 </form>

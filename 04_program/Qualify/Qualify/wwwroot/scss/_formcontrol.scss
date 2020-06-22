@@ -69,6 +69,7 @@ input[type=submit] {
 .table-content {
   height: calc(100vh - 242px);
   overflow-y: auto;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
 }
@@ -132,7 +133,6 @@ input[type=submit] {
 .title,
 .caction-title,
 .cexp-type,
-
 .cdocs-name {
   text-align: left;
   flex-basis: $basic * 10;
@@ -193,7 +193,48 @@ input[type=submit] {
   flex-basis: $basic * 10;
 }
 
+.alert {
+    position: relative;
+    padding: $basic $basic * 1.5;
+    margin: $basic $basic * 2;
+    margin-bottom: $basic;
+    border: 1px solid transparent;
+    border-radius: $basic / 4;
+    font-size: $basic;
+}
 
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-dismissible {
+    padding-right: 4rem;
+}
+
+.alert-dismissible .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: $basic / 2 $basic;
+    color: inherit;
+    font-size: $basic * 2;
+    background-color: transparent;
+
+    & span {
+        font-size: $basic * 2;
+    }
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.15s linear;
+}
+
+.fade.show {
+    opacity: 1;
+}
 
 
 // the next code stolen from bootstrap and still not in use

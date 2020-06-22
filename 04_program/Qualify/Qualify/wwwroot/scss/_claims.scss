@@ -19,17 +19,18 @@
   width: 100%
 }
 
-.claim-img,
+.claim-img, .claim-details {
+    display: inline-block;
+    vertical-align: top;
+    width: 30%;
+}
 .claim-details {
-  // outline: $test;
-
-  display: inline-block;
-  vertical-align: top;
-  width: 50%;
+  
+  width: 70%;
 }
 
 .claim-img {
-  height: $basic * 10;
+  height: $basic * 12;
   overflow: hidden;
 }
 

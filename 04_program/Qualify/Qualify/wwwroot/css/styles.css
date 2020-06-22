@@ -489,6 +489,7 @@ input[type=submit] {
 .table-content {
   height: calc(100vh - 242px);
   overflow-y: auto;
+  overflow-x: hidden;
   margin: 0;
   padding: 0; }
 
@@ -588,6 +589,41 @@ input[type=submit] {
 .cdocs-status,
 .cdocs-type {
   flex-basis: 160px; }
+
+.alert {
+  position: relative;
+  padding: 16px 24px;
+  margin: 16px 32px;
+  margin-bottom: 16px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px; }
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb; }
+
+.alert-dismissible {
+  padding-right: 4rem; }
+
+.alert-dismissible .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  color: inherit;
+  font-size: 32px;
+  background-color: transparent; }
+  .alert-dismissible .close span {
+    font-size: 32px; }
+
+.fade {
+  opacity: 0;
+  transition: opacity 0.15s linear; }
+
+.fade.show {
+  opacity: 1; }
 
 .form-button {
   display: block;
@@ -692,14 +728,16 @@ select.form-control:focus::-ms-value {
   display: block;
   width: 100%; }
 
-.claim-img,
-.claim-details {
+.claim-img, .claim-details {
   display: inline-block;
   vertical-align: top;
-  width: 50%; }
+  width: 30%; }
+
+.claim-details {
+  width: 70%; }
 
 .claim-img {
-  height: 160px;
+  height: 192px;
   overflow: hidden; }
 
 .claimimg {

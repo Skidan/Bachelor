@@ -1,13 +1,13 @@
 ﻿@using Qualify.Models
 @model Claim
 @{
-    ViewData["Title"] = "Claim #" + ViewBag.ClaimId + " details";
+    ViewData["Title"] = "Рекламация №" + ViewBag.ClaimId;
 }
 
 <nav id="breadcrumbs">
     <div class="metabox">
-        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        <a class="metabox-main" asp-controller="Claim" asp-action="Index">Claims</a>
+        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
+        <a class="metabox-main" asp-controller="Claim" asp-action="Index">Рекламации</a>
         <a class="metabox-main" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@ViewBag.ClaimId">@ViewBag.ClaimId</a>
     </div>
 </nav>
@@ -34,30 +34,29 @@
                     }
                     else
                     {
-                        <div class="details"><span class="claim-datefinish">Not sloved yet</span></div>
+                        <div class="details"><span class="claim-datefinish">Ещё не закрыта</span></div>
                     }
                     
-                    <div class="details"><span class="claim-totalexpences">19 256,35 €</span></div>
+                    <div class="details"><span class="claim-totalexpences">3 256,35 €</span></div>
                 </div>
             </div>
             <div class="claim-description">
-                <p>Cia eina kalba apie tam tikros reklamacijos, tiksliai apibriezant kas blogai.</p>
+                <p>Прицеп в ненадлежащем состоянии. При попытке ввода в эксплуатацию обнаружены неисправности, описанные в приложенном отчёте.</p>
             </div>
         </div>
         <div class="claim-actions">
-            <h4>Claim actions</h4>
+            <h4>Действия по рекламации</h4>
             <hr class="divider">
 
             <div class="table">
 
                 <div class="row-headings">
                     <div class="cell id"><span>#</span></div>
-                    <div class="cell caction-title"><span>Action</span></div>
-                    <div class="cell caction-desc"><span>Description</span></div>
-                    <div class="cell caction-responsible"><span>Responsible</span></div>
-                    <div class="cell caction-startdate"><span>Action started</span></div>
-                    <div class="cell caction-finishdate"><span>Action finished</span></div>
-                    <div class="cell caction-status"><span>Status</span></div>
+                    <div class="cell caction-desc"><span>Описание</span></div>
+                    <div class="cell caction-responsible"><span>Ответственный</span></div>
+                    <div class="cell caction-startdate"><span>Начало</span></div>
+                    <div class="cell caction-finishdate"><span>Окончание</span></div>
+                    <div class="cell caction-status"><span>Статус</span></div>
                 </div>
 
                 @{
@@ -66,20 +65,31 @@
                         foreach (var claimAction in ViewBag.CurrentHistory)
                         {
                             string currentResponsibleName = "Undefined responsible";
+                            string endDate = "0000-00-00";
                             foreach (var human in ViewBag.EmployeeList)
                             {
                                 if(human.ID == claimAction.EmployeeID)
                                 {
                                     currentResponsibleName = human.Name;
                                 }
+
                             }
+
+                            if (claimAction.DateEnd != null)
+                            {
+                                endDate = claimAction.DateEnd.ToString("yyyy-MM-dd");
+                            }
+                            else
+                            {
+                                endDate = "---";
+                            }
+
                             <a class="row" href="#">
                                 <div class="cell id"><span>@claimAction.ID</span></div>
-                                <div class="cell caction-title"><span>Fixing</span></div>
                                 <div class="cell caction-desc"><p>@claimAction.Description</p></div>
                                 <div class="cell caction-responsible"><span>@currentResponsibleName</span></div>
-                                <div class="cell caction-startdate"><span>@claimAction.DateStart</span></div>
-                                <div class="cell caction-finishdate"><span>@claimAction.DateEnd</span></div>
+                                <div class="cell caction-startdate"><span>@claimAction.DateStart.ToString("yyyy-MM-dd")</span></div>
+                                <div class="cell caction-finishdate"><span>@endDate</span></div>
                                 <div class="cell caction-status"><span>@claimAction.Performed</span></div>
                             </a>
                         }
@@ -88,7 +98,6 @@
                     {
                         <a class="row" href="#">
                             <div class="cell id"><span>---</span></div>
-                            <div class="cell caction-title"><span>---</span></div>
                             <div class="cell caction-desc"><p>---</p></div>
                             <div class="cell caction-responsible"><span>---</span></div>
                             <div class="cell caction-startdate"><span>---</span></div>
@@ -101,62 +110,62 @@
             </div>
 
             <div class="actionbar">
-                <div class="actionbox"><a class="button btn-primary" asp-controller="ClaimHistory" asp-action="AddHistory" asp-route-ClaimID="@ViewBag.ClaimId">Add</a></div>
+                <div class="actionbox"><a class="button btn-primary" asp-controller="ClaimHistory" asp-action="AddHistory" asp-route-ClaimID="@ViewBag.ClaimId">Добавить</a></div>
             </div>
 
         </div>
 
         <div class="claim-expences">
-            <h4>Claim expences</h4>
+            <h4>Расходы по рекламации</h4>
             <hr class="divider">
             <div class="table">
                 <div class="row-headings">
                     <div class="cell id"><span>#</span></div>
-                    <div class="cell cexp-type"><span>Type</span></div>
-                    <div class="cell cexp-desc"><span>Description</span></div>
-                    <div class="cell cexp-sum"><span>Sum</span></div>
-                    <div class="cell cexp-date"><span>Expence date</span></div>
-                    <div class="cell cexp-owner"><span>Owner</span></div>
+                    <div class="cell cexp-type"><span>Тип</span></div>
+                    <div class="cell cexp-desc"><span>Описание</span></div>
+                    <div class="cell cexp-sum"><span>Сумма</span></div>
+                    <div class="cell cexp-date"><span>Дата расхода</span></div>
+                    <div class="cell cexp-owner"><span>Плательщик</span></div>
                 </div>
                 <a class="row" href="#">
                     <div class="cell id"><span>1</span></div>
-                    <div class="cell cexp-type"><span>Client expences</span></div>
+                    <div class="cell cexp-type"><span>Затраты клиента</span></div>
                     <div class="cell cexp-desc">
-                        <p>Client performed some painting actions by himself</p>
+                        <p>Клиент вынужден был сам перекрашивать кузов прицепа</p>
                     </div>
-                    <div class="cell cexp-sum"><span>2 987,00 €</span></div>
+                    <div class="cell cexp-sum"><span>3 256,35 €</span></div>
                     <div class="cell cexp-date"><span>2020-02-03</span></div>
-                    <div class="cell cexp-owner"><span>Painting bar</span></div>
+                    <div class="cell cexp-owner"><span>Покрасочный цех</span></div>
                 </a>
             </div>
             <div class="actionbar">
-                <div class="actionbox"><a class="button btn-primary" href="#">Add</a></div>
+                <div class="actionbox"><a class="button btn-primary" href="#">Добавить</a></div>
             </div>
         </div>
 
         <div class="claim-documents">
-            <h4>Claim documents</h4>
+            <h4>Связанные документы</h4>
             <hr class="divider">
             <div class="table">
                 <div class="row-headings">
                     <div class="cell id"><span>#</span></div>
-                    <div class="cell cdocs-name"><span>Document name</span></div>
-                    <div class="cell cdocs-type"><span>Document type</span></div>
-                    <div class="cell cdocs-desc"><span>Description</span></div>
-                    <div class="cell cdocs-date"><span>Add date</span></div>
-                    <div class="cell cdocs-status"><span>Status</span></div>
+                    <div class="cell cdocs-name"><span>Название</span></div>
+                    <div class="cell cdocs-type"><span>Тип</span></div>
+                    <div class="cell cdocs-desc"><span>Описание</span></div>
+                    <div class="cell cdocs-date"><span>Дата добав.</span></div>
+                    <div class="cell cdocs-status"><span>Статус</span></div>
                 </div>
                 <a class="row" href="#">
                     <div class="cell id"><span>1</span></div>
                     <div class="cell cdocs-name"><span>F0-2020-06-05/001</span></div>
                     <div class="cell cdocs-type"><span>Invoice</span></div>
-                    <div class="cell cdocs-desc"><p>Transportation invoice</p></div>
+                    <div class="cell cdocs-desc"><p>Логистика</p></div>
                     <div class="cell cdocs-date"><span>2020-02-03</span></div>
-                    <div class="cell cdocs-status"><span>Active</span></div>
+                    <div class="cell cdocs-status"><span>Активный</span></div>
                 </a>
             </div>
             <div class="actionbar">
-                <div class="actionbox"><a class="button btn-primary" href="#">Add</a></div>
+                <div class="actionbox"><a class="button btn-primary" href="#">Добавить</a></div>
             </div>
         </div>
     </div>

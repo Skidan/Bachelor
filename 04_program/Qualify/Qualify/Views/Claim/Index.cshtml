@@ -1,23 +1,22 @@
 ﻿@using Qualify.Models
 @model IEnumerable<Claim>
 @{
-    Layout = "_Layout";
-    ViewData["Title"] = "Claim list";
+    ViewData["Title"] = "Список рекламаций";
 }
 
 <nav id="breadcrumbs">
     <div class="metabox">
-        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a class="metabox-main" asp-controller="Home" asp-action="Index"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
         <a class="metabox-main" asp-controller="Claim" asp-action="Index">Claims</a>
     </div>
 </nav>
 
 <div class="actionbar">
-    <div class="actionbox"><a class="button btn-primary" asp-controller="claim" asp-action="addclaim">Add</a></div>
+    <div class="actionbox"><a class="button btn-primary" asp-controller="claim" asp-action="addclaim">Добавить</a></div>
     <div class="actionbox">
         <form>
-            <input class="inline fromleft" type="search" placeholder="Search...">
-            <input class="fromright" type="submit" value="Find">
+            <input class="inline fromleft" type="search" placeholder="Поиск...">
+            <input class="fromright" type="submit" value="Найти">
         </form>
     </div>
 </div>
@@ -27,16 +26,18 @@
     <div class="table">
         <div class="row-headings">
             <div class="cell id"><span>#</span></div>
-            <div class="cell client"><span>Client</span></div>
-            <div class="cell title"><span>Title</span></div>
-            <div class="cell desc"><span>Description</span></div>
-            <div class="cell start"><span>Started</span></div>
-            <div class="cell finish"><span>Finished</span></div>
+            <div class="cell client"><span>Клиент</span></div>
+            <div class="cell title"><span>Заголовок</span></div>
+            <div class="cell desc"><span>Описание</span></div>
+            <div class="cell start"><span>Начало</span></div>
+            <div class="cell finish"><span>Окончание</span></div>
         </div>
         <div class="table-content">
             @foreach (var claim in Model)
             {
                 string currentClientName = "Undefined Client";
+                string dateFrom = claim.DateStart.ToString("yyyy-MM-dd");
+                string dateTill = "_";
                 foreach (var client in ViewBag.ClientsList)
                 {
                     if (client.ID == claim.ClientID)
@@ -44,13 +45,22 @@
                         currentClientName = client.Name;
                     }
                 }
+
+                if (claim.DateEnd.HasValue)
+                {
+                    dateTill = claim.DateEnd.ToString();
+                } else
+                {
+                    dateTill = "---";
+                }
+
                 <a class="row" asp-controller="Claim" asp-action="ViewClaim" asp-route-id="@claim.ID">
                     <div class="cell id"><span>@claim.ID</span></div>
                     <div class="cell client"><span>@currentClientName</span></div>
                     <div class="cell title"><p>@claim.Title</p></div>
                     <div class="cell desc"><p>@claim.Description</p></div>
-                    <div class="cell start"><span>@claim.DateStart.ToString("yyyy-MM-dd")</span></div>
-                    <div class="cell finish"><span>@claim.DateEnd</span></div>
+                    <div class="cell start"><span>@dateFrom</span></div>
+                    <div class="cell finish"><span>@dateTill</span></div>
                 </a>
             }
         </div>
